@@ -1,0 +1,24 @@
+<!-- news/templates/news/news.html -->
+{% extends 'base.html' %} <!-- Исправлено: теперь правильно указывает на base.html -->
+
+{% block title %}
+    Новостная страница
+{% endblock %}
+
+{% block content %}
+<h1>Новостная страница</h1>
+
+<!-- Цикл для вывода всех новостей -->
+{% for new in news %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h3 class="card-title">{{ new.title }}</h3>
+            <p class="card-text"><strong>Краткое описание:</strong> {{ new.short_description }}</p>
+            <p class="card-text"><strong>Текст новости:</strong> {{ new.text }}</p>
+            <p class="card-text"><small class="text-muted">Опубликовано: {{ new.pub_date }}</small></p>
+            <p class="card-text"><strong>Автор:</strong> {{ new.author.username }}</p>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}

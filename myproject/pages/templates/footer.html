@@ -1,4 +1,11 @@
 <!-- myproject/pages/templates/footer.html -->
-<footer class="bg-light text-center py-3">
-    <p>&copy; {{ current_year }} My Website. All rights reserved.</p>
-</footer>
+<footer class="bg-dark text-white text-center py-4 mt-auto">
+    <div class="container">
+        <p class="mb-1">
+            &copy; {% now "Y" %} <strong>My Website</strong>. Все права защищены.
+        </p>
+        <small class="text-muted">
+            Создано с ❤️ с использованием Django и Bootstrap.
+        </small>
+        <div class="mt-2">
+            <
